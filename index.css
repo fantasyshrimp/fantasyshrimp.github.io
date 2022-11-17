@@ -1,11 +1,93 @@
+header {
+    background: linear-gradient(-30deg, white, gray, white, white, gray);
+    width: 1000px;
+    height: 130px;
+
+    border-bottom: 1px solid rgb(70, 70, 70);
+
+    display: table-cell;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(150, 150, 150, 0.5);  /*배경색*/
+    color: white;   /*글자색*/
+    width: 300px;
+    height: 768px;
+    
+    border-right: 1px solid rgb(10, 10, 10);
+
+    margin-top: 0px;
+    margin-right: 10px;
+
+    padding-top: 10px;
+    padding-right: 10px;
+
+    position: absolute;
+    text-align: right;
+
+    float: left;
+}
+
+section {
+    text-align: left;
+    float: left;
+    width: 700px;
+    padding-top: 10px;
+    padding-left: 320px;
+}
+
+footer {
+    text-align: left;
+    background-color: rgb(255, 153, 0);
+    height: 100px;
+    clear: both;
+}
+
+header,
+footer {
+    line-height: 100px;
+}
+
+section {
+    margin: auto;
+    /*line-height: 500px;*/
+}
 
 p {
-    color: red;
+    color: rgb(68, 0, 255);
 
 }
 
 
-image {
 
-    background-size: cover;
+
+div {
+    text-align: center;
+}
+
+
+#wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+
+
+
+.image-box {
+
+    width: 680px;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.image-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
