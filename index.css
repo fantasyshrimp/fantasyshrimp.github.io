@@ -1,77 +1,62 @@
+#wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header, nav, section,footer {
+    margin: 5px;
+    padding: 0px 2px;
+}
+
 header {
+    height: 150px;
+
     background: linear-gradient(-30deg, white, gray, white, white, gray);
-    width: 1000px;
-    height: 130px;
-
-    border-bottom: 1px solid rgb(70, 70, 70);
-
-    display: table-cell;
-    align-items: center;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    
+    line-height: 150px;
     vertical-align: middle;
     text-align: center;
 }
 
 nav {
-    background-color: rgba(150, 150, 150, 0.5);  /*배경색*/
-    color: white;   /*글자색*/
-    width: 300px;
+    width: 230px;
     height: 768px;
+
+    background-color: rgba(200, 200, 200, 0.5);  /*배경색*/
+    border-right: 1px solid rgb(100, 100, 100);
+
+    color: rgba(0, 0, 0, 0.8);   /*글자색*/
     
-    border-right: 1px solid rgb(10, 10, 10);
-
-    margin-top: 0px;
-    margin-right: 10px;
-
-    padding-top: 10px;
-    padding-right: 10px;
-
-    position: absolute;
     text-align: right;
 
     float: left;
 }
 
 section {
-    text-align: left;
+    width: 765px;
+    height: inherit;
+
+    background-image: url(tmaaaaa.jpg);
+    background-origin: content-box;
+    background-repeat: no-repeat;
+
+    text-align: center;
+
     float: left;
-    width: 700px;
-    padding-top: 10px;
-    padding-left: 320px;
 }
 
 footer {
-    text-align: left;
-    background-color: rgb(255, 153, 0);
     height: 100px;
+    background-color: rgb(255, 153, 0);
+    text-align: left;
+    position: relative;
     clear: both;
-}
-
-header,
-footer {
-    line-height: 100px;
-}
-
-section {
-    margin: auto;
-    /*line-height: 500px;*/
 }
 
 p {
     color: rgb(68, 0, 255);
 
-}
-
-
-
-
-div {
-    text-align: center;
-}
-
-
-#wrapper {
-    max-width: 1024px;
-    margin: 0 auto;
 }
 
 
