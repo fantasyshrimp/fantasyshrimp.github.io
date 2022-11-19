@@ -39,13 +39,13 @@ function processFile(file) {
 
 
 function readTextFile(file) {
-    var rawFile = new XMLHttpRequest();
+    const rawFile = new XMLHttpRequest();
     rawFile.open("GET",file,false);
     rawFile.onreadystatechange = function() {
         if(rawFile.readyState === 4) {
-            if(rawFile.status ===200 || rawFile.status == 0) {
-                var allText = rawFile.responseText;
-                alert(allText);
+            if(rawFile.status ===200 || rawFile.status == 201) {
+                const allText = rawFile.responseText;
+                callback(allText);
             }
         }
     }
@@ -56,17 +56,8 @@ function readTextFile(file) {
 
 
 function testfunc(id, file) {
-
-    
-
-    fetch("footer.html").then(function(response) {
-        response.text().then(function(text) {
-            document.querySelector(id).innerHTML = text;
-        })
-    })
+    document.getElementById(id).innerHTML +="<p>hihi</p>";
     
     
-
-    
-
+    //alert(readTextFile('footer.html').innerText);
 }
