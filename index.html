@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <link href="css.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="script.js"></script>
-
+    <script type="text/javascript" src="script.js"></script>
 
     <title> fshrimp's page </title>
 
 </head>
 <body>
     <div id="wrapper">
+
     <header>
         <h1>header: 안녕하세요. 누군가의 페이지입니다.</h1>   
 
@@ -45,20 +45,34 @@
             </div>
 
     </nav>
-    <section>
+    <section id="loadContents">
         <!--
         <img class="image-thumbnail" src="tmaaaaa.jpg" width="100%" height="100%">
         -->
-        <div id="test"> 
+        <article></article>
+        <input type="button" value="feche" onclick="        
+        fetch('footer').then(function(response) {
+        response.text().then(function(text) {
+            document.querySelector(article).innerHTML = text;
+        })
+    })
         
+        ">
+        
+        <div id="output">
+            어떠한 내용
+        </div>
+
+        <div>     
+
         </div>
 
     </section>
 
     <footer><p>footer:</p>  
     </footer>
-       
-    
+
+
 </body>
 
 </html>
