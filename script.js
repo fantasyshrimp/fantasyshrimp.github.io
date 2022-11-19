@@ -14,3 +14,8 @@ $(function () {
         $('.hide_sidemenu').fadeIn();
     });
 });
+
+$(document).ready(function(){
+    document.getElementById("test").innerHTML='<object type="text/html" data="README.md"></object>';
+
+})
