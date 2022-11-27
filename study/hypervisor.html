@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../css.css" rel="stylesheet">
+
+    <title>fantasy_shrimp's study</title>
+</head>
+<body>
+    <!-- header -->
+    <header>        
+        <p><a href="../index.html">녹아드는 새우블로그</a></p>    
+    </header>
+    <!-- nav -->
+    <nav>
+        <ul id="menuBar">
+            <li class="menu"><a class="menuLink" href="../profile.html">Profile</a></li>
+            <li class="menu">Study
+                <ul class="subMenu">
+                    <li><a href="../study/markdown.html">Markdown(.md)</a></li>
+                    <li><a href="../study/hypervisor.html">Hypervisor</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                </ul> 
+            </li>
+            <li class="menu"><a class="menuLink" href="#">temp1</a></li>
+            <li class="menu"><a class="menuLink" href="#">temp2</a></li>
+            <li class="menu"><a class="menuLink" href="#">temp3</a></li>
+        </ul>
+    </nav>
+
+    <!-- aside -->
+    <aside>
+        <ul><h3>목차</h3>
+            <li><a href="#link1">하이퍼 바이저</a></li>
+            <li><a href="#link2">하이퍼바이저 유형</a></li>
+            <li><a href="#link5">자료참조</a></li>            
+        </ul>
+    </aside>
+
+    <!-- section -->
+    <section>     
+        <article>
+            <h2 id="link1">하이퍼 바이저(hypervisor)</h2>
+            <p>: 하이퍼바이저는 물리적 하드웨어에 설치된 소프트웨어 계층으로, 물리적 머신을 다수의 가상 머신(Virtaul Machine, VM)으로 분할하여
+                호스트 컴퓨터에서 다수의 운영 체제(operating system)를 동시에 실행하기 위한 논리적 플랫폼(platform)을 말한다.</p>
+            
+            <br><br>
+            <ul>
+                <li>단일 하드웨어에서 여러 다른 가상 머신을 호스팅할 수 있는 프로그램이다. </li>
+                <li>각각의 가상 머신(VM)은 자체 프로그램을 실행 할 수 있다.</li>
+                <li>하이퍼바이저가 실행되는 하드웨어는 호스트 머신이라고 부른다.</li>
+                <li>가상 머신에 설치된 운영 체제는 게스트 OS 라고 부르며 경우에 따라 인스턴스라고 부른다.</li>
+                
+                <li>가상화 머신 모니터 ( Virtual Machine Monitor ) 또는 가상화 머신 매니저 ( Virtual Machine Manager ) 약어로 VMM이라고 불리는 하이퍼바이저 관리 콘솔은 가상 머신을 쉽게 관리할 수 있도록 도와주는 컴퓨터 소프트웨어이다.</li>
+            </ul>
+
+            <img src="https://user-images.githubusercontent.com/116702952/202937902-4b41d339-f52d-4ce4-9571-8d11038cad3f.png">
+
+            <br>
+            <hr>
+            <br>
+            <h4 id="link2">하이퍼바이저 유형</h4>
+            
+            <p>유형 1 (= Native / = Bare-Metal )</p>
+            <p>호스트 하드웨어에서 직접 실행되어 하드웨어를 제어하고 게스트 가상머신을 관리하는 형태</p>
+            <br>
+            <ul>장점
+                <li>1. 내결함성 : 물리적 서버에 장애가 발생하면 관리 소프트웨어는 이용 가능한 다른 서버로 신속하게 인스턴스를 마이그레이션하여 물리적 하드웨어에 영향을 끼치지 않도록 한다. 이로인해 유지보수 및 운영 직원이 편한 시간에 수리, 교체가 가능하다.</li>
+                <li>2. RAM 용량 초과/ 동적 할당 :서버에서 여러 인스턴스를 실행할 때 가상 머신에 할당되는 전체 RAM을 하드웨어의 전체 물리적 메모리 용량보다 큰 값으로 설정할 수 있다.</li>
+            </ul>
+            <h6>*유형1의 대표적인 하이퍼바이저는 Xen , Oracle VM Server for SPARC, Oracle VM Server for x86, Microsoft Hyper-V, VMware의 ESX / ESXi 가 있다.</h6>
+            
+            <br>
+            <p>유형 2 (= Hosted)</p> 
+            <p>호스트 된 하이퍼바이저라고도 불리는 유형 2 는 시스템의 다른 응용 프로그램과 마찬가지로 일반적인 OS 내에 실행된다.
+                이 경우 게스트 OS는 호스트에서 프로세스로 실행되는 반면 하이퍼바이저는 게스트 OS와 호스트 OS를 분리한다.
+                유형 2는 운영에 있어 호스트 운영 체제에 전적으로 의존한다. 기본 운영 체제에서 실행되는 하이퍼바이저가 안전하더라도 기본 운영 체제의 모든 문제는 전체 시스템에 영향을 준다.</p>
+            <br>
+            <ul>장점
+                <li>운영 체제 내에 설치되므로 하이퍼바이저 관리 콘솔이 필요하지 않다. </li>
+            </ul>
+            <br>
+            <ul>단점
+                <li>RAM의 초과/동적 할당을 지원하지 않으므로 , 가상 머신에 리소스를 할당할 때 주의해야 한다.</li>
+            </ul>
+            <h6>*유형2의 대표적인 하이퍼 바이저는 VMware Workstation, VMware Player, VirtualBox, Parallels Desktop for Mac이 있다.</h6>
+     
+            <p>...</p><br><br>
+            
+
+            <h5 id="link3"><a style="text-align: left;" href="https://born-dev.tistory.com/38">참고 블로그 : https://born-dev.tistory.com/38</a></h5>
+        </article>
+
+
+    </section>
+
+
+</body>
+</html>

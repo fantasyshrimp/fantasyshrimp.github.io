@@ -1,250 +1,197 @@
-#wrapper {
-    max-width: 1024px;
-    margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-header, nav, section,footer {
-    margin: 5px;
-    padding: 0px 2px;
+
+/*----- tag stye -----*/
+body {
+    font-family: 'Jua', sans-serif;
 }
 
 header {
-    height: 150px;
+    height: 30px;
+    background-color: rgb(255, 200, 150);
 
-    background: linear-gradient(-30deg, white, gray, white, white, gray);
-    border-bottom: 1px solid rgb(100, 100, 100);
+    padding-left: 30px;
+
+    text-align: left;
+    line-height: 30px;
+
+    font-size: 20px;    
+    font-weight: bold;
+
+    top: 0px;
+    position: sticky;
     
-    line-height: 150px;
-    vertical-align: middle;
-    text-align: center;
+}
+header p {
+    color: rgb(55, 40, 30);    
 }
 
 nav {
-    width: 230px;
-    height: 2000px;
+    height: 90px;
+    background: linear-gradient(-180deg,rgb(255, 200, 150), white);
+    border-bottom: 1px solid rgb(255, 200, 150);
 
-    border-right: 1px solid rgb(100, 100, 100);
-        
-    text-align: right;
-
-    float: left;
+    top: 30px;
+    position: sticky;
 }
-
-section {
-    width: 765px;
-    height: inherit;
-
-    text-align: left;
-
-    float: left;
-}
-
-footer {
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
-    clear: both;
-}
-/*  ㅡㅡㅡㅡㅡ */
-
-.side-menubar {
-    width: 45px;
-    height: 100%;
-
-    background: #ff5858;
-    border-right: 1px solid rgba(0, 0, 0, 0.07);
-    margin-left: -1px;
-
-    box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
-    position: relative;
-    float: left;
-
-}
-
-.side-menu {
-    width: 177px;
-    height: 100%;
-
-    background: rgb(255, 255, 255);
-    border-right: 1px solid rgba(0, 0, 0, 0.07);
-    border-left: 2px solid black;
-    box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
-
-    margin-left: -0px;
-    padding-right: 5px;
-
-    position: relative;
-    float: left;
-
-    color: black;
-}
-
-.sidebar-inner {
-    height: 100%;
-    padding-top: 30px;
-}
-
-#sidebar-menu,
-#sidebar-menu ul,
-#sidebar-menu li,
-#sidebar-menu a {
-    border: 0;
-    font-weight: normal;
-    line-height: 1;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    text-decoration: none;
-}
-
-#sidebar-menu>ul>li a {
-    color: #fff;
-    font-size: 20px;
-    display: block;
-    padding: 14px 0px;
-    margin: 0px 0px 0px 8px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    width: 28px;
-    cursor: pointer;
-}
-
-#sidebar-menu .fas {
-    padding-left: 6px;
-}
-
-/* 사이드 메뉴 */
-input[type="search"] {
-    width: 140px;
-    margin: 0 auto;
-    margin-left: 9px;
-    border: 2px solid #797979;
-    font-size: 14px;
-    margin-top: 10px;
-    padding: 4px 0 4px 14px;
-    border-radius: 50px;
-}
-
-.left_sub_menu { /*이게 흰부분*/
-    position: fixed;
-    top: 50px;
-    width: 200px;
-    z-index: 10;
-    left: 45px;
-    background: rgb(255, 255, 255);
-    border-right: 1px solid rgba(0, 0, 0, 0.07);
-    bottom: 50px;
-    height: 100%;
-    margin-bottom: -70px;
-    margin-top: 0px;
-    padding-bottom: 0px;
-    box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
-    color: black;
-}
-
-.sub_menu { /*메뉴 상단 여백*/
+aside {
     margin-top: 50px;
+    margin-inline: auto;
+
+    padding-left: 100px;
+
+    position: fixed;
+    float:inline-end;
+}
+aside ul {
+    list-style: none;
+}
+aside ul li {
+    margin-top: 5px;
 }
 
-.left_sub_menu>.sub_menu li:hover {
-    color: ff5858;
-    background-color: #e1e1e1;
-}
 
-.left_sub_menu>.sub_menu li {
-    color: #333;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 20px 0px 8px 14px;
-    border-bottom: 1px solid #e1e1e1;
-}
+section {   
+    margin: 0 auto;
+    width: 900px; 
+    padding: 50px;
 
-.sub_menu>h2 {
-    padding-bottom: 4px;
-    border-bottom: 3px solid #797979;
-    margin-top: 30px;
-    font-size: 21px;
-    font-weight: 600;
-    color: #333;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-family: 'NotoKrB';
-    line-height: 35px;
-}
-
-.sub_menu .fas {
-    color: #ff5858;
     font-size: 20px;
-    line-height: 20px;
-    float: right;
-    margin-right: 20px;
+    word-break:break-all;
+}
+article {
+    margin: 0 auto;
+    text-align: center;
 }
 
-.sub_menu>.big_menu>.small_menu li {
-    color: #333;
-    font-size: 14px;
-    font-weight: 600;
-    border-bottom: 0px solid #e1e1e1;
-    margin-left: 14px;
-    padding-top: 8px;
+article ul li {
+    margin-left: 25px;
 }
 
-.big_menu {
-    cursor: pointer;
-}
 
-ul {
-    padding-inline-start: 0px;
-}
 
 a {
-    color: #797979;
     text-decoration: none;
-    background-color: transparent;
 }
 
-ul {
+
+/*----- id stye -----*/
+
+#menuBar {      
+    padding-top: 10px;      
+    height: 80; 
+    width: 800px; 
+    margin: 0 auto;
+
+}
+#menuBar .menu {         
+    border-left: 1px solid rgb(255,200,150);
+    border-right: 1px solid rgb(255,200,150);
+    margin-left: -1px;
+
+    list-style: none;        
+    float: left;               
+    line-height: 80px;         
+    vertical-align: middle;    
+    text-align: center;   
+}
+
+
+/*----- class stye -----*/
+.menu {
+    list-style: none;     
+    color: rgb(200, 150, 120);             
+    display: block;            
+    width: 150px;              
+    font-size: 30px;           
+    font-weight: bold;         
+}
+.menu:hover {            
+    color: rgb(55, 40, 30);            
+    background-color: rgb(200, 150, 120);   
+}
+.menu:hover .menuLink {            
+    color: rgb(55, 40, 30);            
+    background-color: rgb(200, 150, 120);   
+}
+.menu:hover .subMenu {
+    display: block;
+}
+
+.menuLink {    
+    color: rgb(200, 150, 120);    
+}
+
+
+
+.subMenu {
+    width:150px;
+    display:none;
+
+    position:absolute;
+    margin-top: 1px;
+    margin-right: 1px;  
+
     list-style: none;
+    float: left;
+    
 }
+.subMenu li {
+    width:150px;
+    height: 50px;
+    background: white;
+    border-bottom: 1px solid rgb(200, 150, 120);
+    font-size: 20px;
 
-ol,
-ul {
-    margin-top: 0;
-    margin-bottom: 10px;
+    line-height: 50px;   
+    vertical-align: middle;       
+
+    float: left;    
 }
-
-.has_sub {
-    width: 100%;
-}
-
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.hide_sidemenu {
-    display: none;
-}
-
-
-
 
 
 .image-box {
-
-    width: 680px;
-    height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 250px;
     overflow: hidden;
     object-fit: cover;
-    margin: 0 auto;
+    margin-right: 35px;
 }
 
-.image-thumbnail {
+.image-example {    
     width: 100%;
-    height: 130px;
     object-fit: cover;
 }
+
+
+/*----- etc -----*/
+
+
+@media screen and (max-width: 1100px) {
+    aside {
+      display: none;
+    }
+  } 
+
+
+@font-face {
+    font-family: 'Jua', sans-serif; /*font 이름*/
+    font-style: 'normal'; /* font 스타일 정의 (기울임, 일반) */
+    font-weight: 400; /* font 굵기 정의 */
+
+    src: url('./jua/Jua-Regular.ttf');
+   }
+
+
+
+   :target:before{
+    content: "";
+    display: block;
+    height: 150px;          /* fixed header 높이 만큼 부여 or 브라우저 상단에서 띄워놓기 원하는 높이 */
+    margin-top: -150px;     /* 위에서 설정한 높이와 동일한 만큼을 음수로 제공 */
+    visibility: hidden;
+  }
