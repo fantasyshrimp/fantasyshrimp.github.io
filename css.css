@@ -64,7 +64,6 @@ section {
 }
 article {
     margin: 0 auto;
-    text-align: center;
 }
 
 article ul li {
@@ -83,7 +82,7 @@ a {
 #menuBar {      
     padding-top: 10px;      
     height: 80; 
-    width: 800px; 
+    width: 755px; 
     margin: 0 auto;
 
 }
@@ -99,6 +98,14 @@ a {
     text-align: center;   
 }
 
+#profile {
+    text-align: center;
+}
+
+#canvas {
+    display: block;
+    margin: 0 auto;
+}
 
 /*----- class stye -----*/
 .menu {
