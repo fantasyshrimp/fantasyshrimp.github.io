@@ -1,4 +1,4 @@
-$(function () {
+window.onload = $(function () {
     $(".left_sub_menu").hide();
     $(".has_sub").click(function () {
         $(".left_sub_menu").fadeToggle(300);
