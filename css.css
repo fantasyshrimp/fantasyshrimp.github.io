@@ -184,12 +184,14 @@ a {
     }
   } 
 
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 @font-face {
     font-family: 'Jua', sans-serif; /*font 이름*/
     font-weight: 400;
     font-style: normal;
-
-    src: url('./Jua/Jua-Regular.ttf');
+    src: url('./Jua/Jua-Regular.woff') format('woff');
+    src: url('./Jua/Jua-Regular.ttf') format('truetype');
+    
    }
 
 
