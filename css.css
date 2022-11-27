@@ -184,11 +184,9 @@ a {
     }
   } 
 
-
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 @font-face {
     font-family: 'Jua', sans-serif; /*font 이름*/
-    font-style: 'normal'; /* font 스타일 정의 (기울임, 일반) */
-    font-weight: 400; /* font 굵기 정의 */
 
     src: url('./jua/Jua-Regular.ttf');
    }
