@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <link href="../css.css" rel="stylesheet">
+
+    <title>fantasy_shrimp's study</title>
+</head>
+<body>
+    <!-- header -->
+    <header>        
+        <p><a href="../index.html">녹아드는 새우블로그</a></p>    
+    </header>
+    <!-- nav -->
+    <nav>
+        <ul id="menuBar">
+            <li class="menu"><a class="menuLink" href="../profile.html">Profile</a></li>
+            <li class="menu">Study
+                <ul class="subMenu">
+                    <li><a href="../study/markdown.html">Markdown(.md)</a></li>
+                    <li><a href="../study/hypervisor.html">Hypervisor</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                    <li><a href="">SUB_MENU</a></li>
+                </ul> 
+            </li>
+            <li class="menu"><a class="menuLink" href="#">temp1</a></li>
+            <li class="menu"><a class="menuLink" href="#">temp2</a></li>
+            <li class="menu"><a class="menuLink" href="#">temp3</a></li>
+        </ul>
+
+
+
+    </nav>
+
+    <!-- aside -->
+    <aside>
+        <ul><h3>목차</h3>
+            <li><a href="#link1">리눅스 명령어s</a></li>
+            <li><a href="#link2">파일 시스템 탐색 기본 명령어</a></li>
+            <li><a href="#link3">파일과 디렉토리 조작 명령어</a></li>
+            <li><a href="#link4">명령어를 다루는 명령어</a></li>      
+        </ul>
+    </aside>
+
+    <!-- section -->
+    <section>     
+        <article>
+            <h2 id="link1">리눅스 명령어s</h2>            
+            <br>
+            
+            <h4 id="link2">파일 시스템 탐색 기본 명령어</h4>
+            <ul>pwd :
+                <li>현재 작업중인 디렉토리를 출력</li>
+                <li>$ pwd</li>
+                <li>=> /home/vagrant/git/bitcamp-test</li>
+            </ul><br>
+            <ul>cd :
+                <li>작업 디렉토리의 위치 변경</li>
+                <li>$ cd /git/bitcamp-study</li>
+            </ul><br>            
+            <ul>ls :
+                <li>현재 작업중인 디렉토리의 파일 목록 출력</li>
+                <li>$ ls</li>
+                <li>=> file1.txt  file2.txt  g1.txt  README.md</li>
+            </ul><br> 
+            <ul>file :
+                <li>파일의 종류와 속성값 출력</li>
+                <li>$ file a.txt</li>
+                <li>=> a.txt: ASCII text</li>
+            </ul><br> 
+            <ul>less :
+                <li>파일의 종류와 속성값 출력</li>
+                <li>$ less a.txt</li>
+                <li>=> 1234 a.txt(END)</li>
+            </ul><br> 
+            <br>
+            <h4 id="link3">파일과 디렉토리 조작 명령어</h4>
+            <ul>cp :
+                <li>파일 복사</li>
+                <li>$ cp [복사할 파일명] [복사된 파일명]</li>
+                <li>$ cp [복사할 파일명] [복사할 디렉토리]</li>
+            </ul><br>
+            <ul>mkdir :
+                <li>디렉토리 생성</li>
+                <li>$ mkdir [디렉토리명]</li>
+            </ul><br>
+            <ul>rm :
+                <li>파일 삭제</li>
+                <li>$ rm [파일명]</li>
+                <li>$ rm -rf [디렉토리명]</li>
+            </ul><br>
+            <ul>ln :
+                <li>파일의 링크 생성</li>
+                <li>$ ln [파일명] [생성할링크명]</li>
+                <li>=> 링크를 통해 파일에 접근가능</li>
+            </ul><br>
+
+
+            <h4 id="link4">명령어를 다루는 명령어</h4>
+            <ul>type :
+                <li>명령어의 상태 확인</li>
+                <li>$ type test</li>
+                <li>=> test is a shell builtin</li>
+            </ul><br>
+            <ul>which :
+                <li>명령어의 실행되는 위치 확인</li>
+                <li>$ which ls</li>
+                <li>=> /usr/bin/ls</li>
+            </ul><br>
+            <ul>man :
+                <li>명령어의 매뉴얼 확인</li>
+                <li>$ man mv</li>
+                <li><p>MV(1) User Commands MV(1)<br>
+                    NAME<br>
+                        mv - move (rename) files<br>
+                        <br>
+                    SYNOPSIS<br>
+                        mv [OPTION]... [-T] SOURCE DEST<br>
+                        mv [OPTION]... SOURCE... DIRECTORY<br>
+                        mv [OPTION]... -t DIRECTORY SOURCE...<br>
+                        <br>
+                    DESCRIPTION<br>
+                        Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.<br>
+                        Mandatory arguments to long options are mandatory for short options too.<br>
+                        --backup[=CONTROL]<br>
+                            make a backup of each existing destination file<br>
+                        -b     like --backup but does not accept an argument ....</p></li>
+            </ul><br>
+            <ul>apropos :
+                <li>명령어 검색</li>
+                <li>$ apropos [검색어]</li>
+            </ul><br>
+            <ul>info :
+                <li>명령어의 상세 메뉴얼 확인</li>
+                <li>$ info [명령어]</li>
+            </ul><br>
+            <ul>whatis :
+                <li>명령어의 간략한 설명 확인</li>
+                <li>$ whatis ls</li>
+                <li><p>=>ls (1) - list directory contents<br>
+                    ls (1p) - list directory contents</p></li>
+            <ul>alias :
+                <li>명령어의 별칭 등록</li>
+                <li>$ alias mkafile='touch a.txt'</li>
+                <li>=> mkafile 입력 시 touch a.txt명령어 실행</li>
+            </ul><br>
+
+            </ul><br>
+            <p>...</p><br><br>
+            
+
+
+        </article>
+
+
+    </section>
+
+
+</body>
+</html>
