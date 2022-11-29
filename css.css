@@ -13,7 +13,7 @@ header {
     height: 30px;
     background-color: rgb(255, 200, 150);
 
-    padding-left: 30px;
+    xpadding-left: 30px;
 
     text-align: left;
     line-height: 30px;
@@ -23,7 +23,8 @@ header {
 
     top: 0px;
     position: sticky;
-    
+
+    box-sizing: border-box;    
 }
 header p {
     color: rgb(55, 40, 30);    
@@ -35,6 +36,7 @@ nav {
     border-bottom: 1px solid rgb(255, 200, 150);
 
     top: 30px;
+    box-sizing: border-box;
     position: sticky;
 }
 aside {
@@ -43,6 +45,7 @@ aside {
 
     padding-left: 100px;
 
+    box-sizing: border-box;
     position: fixed;
     float:inline-end;
 }
@@ -61,6 +64,7 @@ section {
 
     font-size: 20px;
     word-break:break-all;
+    box-sizing: border-box;
 }
 article {
     margin: 0 auto;
@@ -98,13 +102,27 @@ a {
     text-align: center;   
 }
 
-#profile {
-    text-align: center;
+#profile {    
+    background-image: url("https://user-images.githubusercontent.com/116702952/204148995-4011f5fc-17eb-42dc-b0b8-3a9e7c592417.png");
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    
+    padding-top: 250px;
+    padding-left: 200px;
+    width: 300px;
+    height: 50px;
+
+    display: block;
 }
 
 #canvas {
     display: block;
-    margin: 0 auto;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+#title {
+    padding-left: 30px;
 }
 
 /*----- class stye -----*/
@@ -178,7 +196,7 @@ a {
 /*----- etc -----*/
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1400px) {
     aside {
       display: none;
     }

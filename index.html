@@ -16,29 +16,28 @@
 <body>
     <!-- header -->
     <header>        
-        <p><a href="./index.html">녹아드는 새우블로그</a></p>    
+        <p><a id="title" href="./index.html">녹아드는 새우블로그</a></p>   
+        
+        <!-- nav -->
+        <nav>
+            <ul id="menuBar">
+                <li class="menu"><a class="menuLink" href="./profile.html">Profile</a></li>
+                <li class="menu">Study
+                    <ul class="subMenu">
+                        <li><a href="./study/markdown.html">Markdown(.md)</a></li>
+                        <li><a href="./study/hypervisor.html">Hypervisor</a></li>
+                        <li><a href="./study/linuxCommand.html">linuxCommand</a></li>
+                        <li><a href="">SUB_MENU</a></li>
+                        <li><a href="">SUB_MENU</a></li>
+                    </ul> 
+                </li>
+                <li class="menu"><a class="menuLink" href="#">temp1</a></li>
+                <li class="menu"><a class="menuLink" href="#">temp2</a></li>
+                <li class="menu"><a class="menuLink" href="#">temp3</a></li>
+            </ul>
+        </nav>
     </header>
-    <!-- nav -->
-    <nav>
-        <ul id="menuBar">
-            <li class="menu"><a class="menuLink" href="./profile.html">Profile</a></li>
-            <li class="menu">Study
-                <ul class="subMenu">
-                    <li><a href="./study/markdown.html">Markdown(.md)</a></li>
-                    <li><a href="./study/hypervisor.html">Hypervisor</a></li>
-                    <li><a href="./study/linuxCommand.html">linuxCommand</a></li>
-                    <li><a href="">SUB_MENU</a></li>
-                    <li><a href="">SUB_MENU</a></li>
-                </ul> 
-            </li>
-            <li class="menu"><a class="menuLink" href="#">temp1</a></li>
-            <li class="menu"><a class="menuLink" href="#">temp2</a></li>
-            <li class="menu"><a class="menuLink" href="#">temp3</a></li>
-        </ul>
 
-
-
-    </nav>
     <!-- section -->
     <section id="game">
         <canvas id="canvas" width="800px" height="500px" style="border: 1px solid black"></canvas>
