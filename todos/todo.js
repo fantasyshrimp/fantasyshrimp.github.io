@@ -4,9 +4,11 @@ const todoMenuDiv = document.querySelector("#todoBottom");
 const todoListDiv = document.querySelector("#todoList");
 const todoListCount = document.querySelector("#todoListCount");
 
+const allSelectbox = document.querySelector("#allSelect");
 const listAllBtn = document.querySelector("#listAll");
 const listActiveBtn = document.querySelector("#listActive");
 const listCompletedBtn = document.querySelector("#listCompleted");
+const clearCompletedBtn = document.querySelector("#clearCompleted");
 
 let listCount = 0;
 let checkboxID = 0;
@@ -53,6 +55,7 @@ input.addEventListener("keydown", (event) => {
 
             if (listCount === 0) {
                 todoMenuDiv.style.display = "none";
+                checkboxID = 0;
             }
 
             localStorage.removeItem(childInput.id);
@@ -81,7 +84,21 @@ input.addEventListener("keydown", (event) => {
     }
 });
 
-
+allSelectbox.addEventListener("change", () => {
+    if (allSelectbox.checked) {
+        todoListDiv.childNodes.forEach((element) => {
+            if (!element.firstChild.checked) {
+                element.firstChild.click();
+            }
+        })
+    } else {
+        todoListDiv.childNodes.forEach((element) => {
+            if (element.firstChild.checked) {
+                element.firstChild.click();
+            }
+        })
+    }
+});
 
 listAllBtn.addEventListener("click", () => {
     currentList = "listAll"
@@ -110,7 +127,16 @@ listCompletedBtn.addEventListener("click", () => {
     listActiveBtn.classList.remove("selectedListStyle");
     listCompletedBtn.classList.add("selectedListStyle");
 });
+clearCompletedBtn.addEventListener("click", () => {
 
+    for (let element of todoListDiv.childNodes) {    
+        if (element.firstChild.checked) {
+            element.lastChild.click();
+        }
+    }    
+    localStorage.setItem("data",todoListDiv.innerHTML);
+    updateList(currentList);
+});
 
 
 window.onload = function() {
@@ -141,10 +167,13 @@ window.onload = function() {
 
                 if (listCount === 0) {
                     todoMenuDiv.style.display = "none";
+                    checkboxID = 0;
                 }
 
                 localStorage.removeItem(child.childNodes[0].id);
-                localStorage.setItem("data",todoListDiv.innerHTML);                
+                localStorage.setItem("data",todoListDiv.innerHTML);    
+                
+                updateList(currentList);    
             })
             listCount++;
         })
@@ -159,8 +188,7 @@ window.onload = function() {
                 let completedItem = document.querySelector(`#${data}`);
 
                 if (completedItem) {
-                    completedItem.checked = true;       
-                    completedItem.parentNode.childNodes[2].classList.add("complete");
+                    completedItem.click();
                 }
                 else {
                     localStorage.removeItem(data);
@@ -195,10 +223,19 @@ function updateList(currentList) {
 
 
 function updateAllList() {
+    let activeCount = 0;
     todoListDiv.childNodes.forEach((todoItem) => {
-        todoItem.style.display = "block";        
+        todoItem.style.display = "block";       
+        if (!todoItem.firstChild.checked) {
+            activeCount++;
+        } 
     })
-    todoListCount.innerHTML = `${listCount} items left`
+    if (activeCount === listCount) {
+        clearCompletedBtn.style.display = "none";
+    } else {
+        clearCompletedBtn.style.display = "initial";
+    }
+    todoListCount.innerHTML = `${activeCount} items left`
 }
 
 function updateActiveList() {
@@ -211,7 +248,8 @@ function updateActiveList() {
             activeCount++;
         }        
     })    
-    todoListCount.innerHTML = `${activeCount} items left` 
+    todoListCount.innerHTML = `${activeCount} items left`
+    clearCompletedBtn.style.display = "none";
 }
 
 function updateCompletedList() {
@@ -222,7 +260,12 @@ function updateCompletedList() {
         } else {
             todoItem.style.display = "block";
             completedCount++;
-        }   
+        }           
     })
+    if (completedCount === 0) {
+        clearCompletedBtn.style.display = "none";
+    } else {
+        clearCompletedBtn.style.display = "initial";
+    }
     todoListCount.innerHTML = `${completedCount} items left`
 }

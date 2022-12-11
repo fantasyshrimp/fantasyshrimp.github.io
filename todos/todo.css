@@ -23,6 +23,7 @@ main {
 #todoMain {
     box-sizing: 100%;
     box-shadow: 0px 1px 5px 1px rgba(100, 100, 100, 0.3);
+    position: relative;
 }
 
 
@@ -46,6 +47,39 @@ main {
 
 #userInput:focus {
     outline: none;
+}
+
+#allSelect {
+    display: none;
+}
+
+#allSelect + label{
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    border: none;
+    background-image: url(../resource/underArrow.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    color: #707070;
+
+    position: absolute;
+    left: 15px;
+    top: 25px;
+}
+
+#allSelect:checked + label{
+    border: none;
+    background-image: url(../resource/underArrow_selected.png);
+}
+
+#allSelect:checked + label::after{
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    position: absolute;
 }
 
 
@@ -74,6 +108,7 @@ main {
     background: none;
     box-sizing: border-box;
     border: 1px solid white;
+    color: rgb(150, 150, 150);
     
 }
 #todoBottom > button:focus {
@@ -91,7 +126,15 @@ main {
     border: 1px solid rgba(202, 30, 0, 0.897);
 }
 
-
+button#clearCompleted {
+    border: none;
+    position: absolute;
+    right: 5px;
+}
+button#clearCompleted:hover {
+    border: none;
+    text-decoration: underline;    
+}
 
 
 #todoList {
