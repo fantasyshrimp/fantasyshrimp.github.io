@@ -254,9 +254,11 @@ function updateActiveList() {
 
 function updateCompletedList() {
     let completedCount = 0;
+    let activeCount = 0;
     todoListDiv.childNodes.forEach((todoItem) => {
         if (!todoItem.firstChild.checked) {
             todoItem.style.display = "none";
+            activeCount++;
         } else {
             todoItem.style.display = "block";
             completedCount++;
@@ -267,5 +269,5 @@ function updateCompletedList() {
     } else {
         clearCompletedBtn.style.display = "initial";
     }
-    todoListCount.innerHTML = `${completedCount} items left`
+    todoListCount.innerHTML = `${activeCount} items left`
 }
