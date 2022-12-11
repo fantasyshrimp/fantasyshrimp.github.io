@@ -57,6 +57,8 @@ input.addEventListener("keydown", (event) => {
 
             localStorage.removeItem(childInput.id);
             localStorage.setItem("data",todoListDiv.innerHTML);
+
+            updateList(currentList); 
         });
 
         childDiv.appendChild(childInput);
@@ -76,7 +78,6 @@ input.addEventListener("keydown", (event) => {
         localStorage.setItem("countId",checkboxID);  
     }
 });
-
 
 
 listAllBtn.addEventListener("click", () => {
@@ -115,7 +116,6 @@ window.onload = function() {
         listCount = 0;
         checkboxID = parseInt(localStorage.getItem("countId"));
 
-
         todoListDiv.childNodes.forEach((child) => {
             child.style.display = "block";
             child.childNodes[0].addEventListener("change", () => {
@@ -141,7 +141,9 @@ window.onload = function() {
                 }
 
                 localStorage.removeItem(child.childNodes[0].id);
-                localStorage.setItem("data",todoListDiv.innerHTML);                
+                localStorage.setItem("data",todoListDiv.innerHTML);
+                
+                updateList(currentList); 
             })
             listCount++;
         })
@@ -162,9 +164,7 @@ window.onload = function() {
                 else {
                     localStorage.removeItem(data);
                 }
-
-            }
-            
+            }            
         }
         currentList = localStorage.getItem("currentList");
         document.getElementById(currentList).click();
