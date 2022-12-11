@@ -40,7 +40,7 @@ input.addEventListener("keydown", (event) => {
                 childP.classList.remove("complete");
                 localStorage.removeItem(childInput.id);
             }         
-            updateList(currentList);   
+            updateList(currentList);
         });
         
         const childBtn = document.createElement("button");
@@ -58,7 +58,7 @@ input.addEventListener("keydown", (event) => {
             localStorage.removeItem(childInput.id);
             localStorage.setItem("data",todoListDiv.innerHTML);
 
-            updateList(currentList); 
+            updateList(currentList);
         });
 
         childDiv.appendChild(childInput);
@@ -75,9 +75,12 @@ input.addEventListener("keydown", (event) => {
         todoListCount.innerHTML = `${listCount} items left`
 
         localStorage.setItem("data",todoListDiv.innerHTML);       
-        localStorage.setItem("countId",checkboxID);  
+        localStorage.setItem("countId",checkboxID);
+
+        updateList(currentList);
     }
 });
+
 
 
 listAllBtn.addEventListener("click", () => {
@@ -141,9 +144,7 @@ window.onload = function() {
                 }
 
                 localStorage.removeItem(child.childNodes[0].id);
-                localStorage.setItem("data",todoListDiv.innerHTML);
-                
-                updateList(currentList); 
+                localStorage.setItem("data",todoListDiv.innerHTML);                
             })
             listCount++;
         })
@@ -164,7 +165,9 @@ window.onload = function() {
                 else {
                     localStorage.removeItem(data);
                 }
-            }            
+
+            }
+            
         }
         currentList = localStorage.getItem("currentList");
         document.getElementById(currentList).click();
