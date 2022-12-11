@@ -59,7 +59,7 @@ main {
     height: 30px;
     
     border: none;
-    background-image: url(../resource/underArrow.png);
+    background-image: url("../resource/underArrow.png");
     background-repeat: no-repeat;
     background-size: 30px;
     color: #707070;
@@ -71,7 +71,7 @@ main {
 
 #allSelect:checked + label{
     border: none;
-    background-image: url(../resource/underArrow_selected.png);
+    background-image: url("../resource/underArrow_selected.png");
 }
 
 #allSelect:checked + label::after{

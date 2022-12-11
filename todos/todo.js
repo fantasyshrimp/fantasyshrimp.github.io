@@ -128,14 +128,22 @@ listCompletedBtn.addEventListener("click", () => {
     listCompletedBtn.classList.add("selectedListStyle");
 });
 clearCompletedBtn.addEventListener("click", () => {
-
+    let clearList = [];
     for (let element of todoListDiv.childNodes) {    
         if (element.firstChild.checked) {
-            element.lastChild.click();
+            clearList.push(element);
         }
-    }    
+    }
+    for (let i= 0; i < clearList.length; i++) {
+        clearList[i].lastChild.click();
+    }
+
     localStorage.setItem("data",todoListDiv.innerHTML);
     updateList(currentList);
+
+    if (allSelectbox.checked) {
+        allSelectbox.click();
+    }
 });
 
 
