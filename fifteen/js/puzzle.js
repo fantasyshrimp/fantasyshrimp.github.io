@@ -32,7 +32,6 @@ for (let i = 0; i < 16; i++) {
                 };
                 canSelectFlag = true;
             }, 200);
-
         }
     });
 
@@ -92,7 +91,6 @@ mixUpBtn.addEventListener("click", function() {
     window.location.reload();
 })
 
-
 function checkWin() {    
     if(checkingArray[3][3] === 0) {
         for (let i = 0; i < 15; i++) {
@@ -100,6 +98,8 @@ function checkWin() {
                 return false;
             }            
         }
+        return true;
     }
-    return true;
+    return false;
+    
 }
