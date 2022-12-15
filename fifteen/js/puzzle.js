@@ -95,15 +95,11 @@ mixUpBtn.addEventListener("click", function() {
 
 function checkWin() {    
     if(checkingArray[3][3] === 0) {
-        let correctCount = 0;
         for (let i = 0; i < 15; i++) {
-            if (puzzleBoardDiv.childNodes[i].childNodes[0].getAttribute("data-piece") == i + 1) {
-                correctCount++;                
-            }
-            if (correctCount == 15) {
-                return true;
+            if (puzzleBoardDiv.childNodes[i].childNodes[0].getAttribute("data-piece") != i + 1) {
+                return false;
             }            
         }
     }
-    return false;
+    return true;
 }
