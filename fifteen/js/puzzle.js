@@ -10,8 +10,8 @@ let canSelectFlag = true;
 
 for (let i = 0; i < 16; i++) {
     let puzzleBlock = document.createElement("div"); 
-    puzzleBlock.setAttribute("row", parseInt(i / 4));
-    puzzleBlock.setAttribute("column",(i % 4));
+    puzzleBlock.setAttribute("data-row", parseInt(i / 4));
+    puzzleBlock.setAttribute("data-column",(i % 4));
 
     puzzleBlock.addEventListener("click", function() {
         let result = checkEmptyBlock(this);
@@ -20,7 +20,7 @@ for (let i = 0; i < 16; i++) {
             this.childNodes[0].classList.add(result.side);
             canSelectFlag = false;                
 
-            checkingArray[this.getAttribute("row")][this.getAttribute("column")] = 0;
+            checkingArray[this.getAttribute("data-row")][this.getAttribute("data-column")] = 0;
             checkingArray[result.row][result.column] = 1;
 
             setTimeout(() => {                
@@ -40,8 +40,8 @@ for (let i = 0; i < 16; i++) {
 }
 
 function checkEmptyBlock(puzzleBlock) {
-    let row = parseInt(puzzleBlock.getAttribute("row"));
-    let column = parseInt(puzzleBlock.getAttribute("column"));
+    let row = parseInt(puzzleBlock.getAttribute("data-row"));
+    let column = parseInt(puzzleBlock.getAttribute("data-column"));
 
     if(row - 1 >= 0 && checkingArray[row - 1][column] === 0) {
         return {
@@ -79,14 +79,13 @@ const ghostContainer = document.createElement("div");
 for (let i = 0; i < 15; i++) {
     let piece = document.createElement("div");
     piece.style.backgroundImage = `url('./images/piece${i+1}.png')`;
-    piece.setAttribute("piece", i+1);
+    piece.setAttribute("data-piece", i+1);
     ghostContainer.appendChild(piece);
 }
 
 for (let i = 0; i < 15; i++) {
     let child = ghostContainer.childNodes[parseInt(Math.random() * ghostContainer.childNodes.length)];    
     puzzleBoardDiv.childNodes[i].appendChild(child);
-
 }
 
 mixUpBtn.addEventListener("click", function() {
@@ -98,7 +97,7 @@ function checkWin() {
     if(checkingArray[3][3] === 0) {
         let correctCount = 0;
         for (let i = 0; i < 15; i++) {
-            if (puzzleBoardDiv.childNodes[i].childNodes[0].getAttribute("piece") == i + 1) {
+            if (puzzleBoardDiv.childNodes[i].childNodes[0].getAttribute("data-piece") == i + 1) {
                 correctCount++;                
             }
             if (correctCount == 15) {
